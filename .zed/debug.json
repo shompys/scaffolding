@@ -1,0 +1,10 @@
+[
+  {
+    "label": "DEBUG",
+    "adapter": "Delve",
+    "request": "launch",
+    "mode": "debug",
+    "program": "./cmd/main.go",
+    "args": ["-name", "github.com/test/debuggeo", "-path", "/tmp/debuggeo"],
+  },
+]

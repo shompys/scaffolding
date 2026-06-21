@@ -36,7 +36,12 @@ func main() {
 
 	targetPath := *pathFlag
 	if targetPath == "." {
-		targetPath = filepath.Join(cwd, filepath.Base(*name))
+		nameBase := filepath.Base(*name)
+		if filepath.Base(cwd) == nameBase {
+			targetPath = cwd
+		} else {
+			targetPath = filepath.Join(cwd, nameBase)
+		}
 	} else if !filepath.IsAbs(targetPath) {
 		targetPath = filepath.Join(cwd, targetPath)
 	}

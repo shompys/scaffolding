@@ -111,7 +111,8 @@ func scaffold(cfg Config) error {
 			return fmt.Errorf("leyendo template %s: %w", path, err)
 		}
 
-		replaced := strings.ReplaceAll(string(content), "{{BINARY_NAME}}", binName)
+		replaced := strings.ReplaceAll(string(content), "{{MODULE_NAME}}", cfg.ModuleName)
+		replaced = strings.ReplaceAll(replaced, "{{BINARY_NAME}}", binName)
 
 		if err := os.WriteFile(dest, []byte(replaced), 0644); err != nil {
 			return fmt.Errorf("escribiendo %s: %w", dest, err)

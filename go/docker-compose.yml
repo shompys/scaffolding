@@ -1,0 +1,23 @@
+services:
+  db:
+    container_name: postgres_database
+    image: postgres:17-bookworm
+    volumes:
+      - ./postgres:/var/lib/postgresql/data
+    ports:
+      - 5432:5432
+    environment:
+      - POSTGRES_PASSWORD=${DB_PASSWORD}
+      - POSTGRES_DB=${DB_NAME}
+  pbAdmin:
+    depends_on:
+      - db
+    image: dpage/pgadmin4:9.13
+    ports:
+      - 8081:80
+      # con este volume en particular users linux chown -R 5050:5050 pgadmin
+    volumes:
+      - ./pgadmin:/var/lib/pgadmin
+    environment:
+      - PGADMIN_DEFAULT_PASSWORD=123456
+      - PGADMIN_DEFAULT_EMAIL=shompys@gmail.com

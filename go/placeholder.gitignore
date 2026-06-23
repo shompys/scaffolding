@@ -1,0 +1,70 @@
+# ==========================================
+# Go
+# ==========================================
+
+# Binarios compilados
+*.exe
+*.exe~
+*.dll
+*.so
+*.dylib
+
+# Binario del proyecto (nombre del módulo)
+/bin/
+
+# Test
+*.test
+*.out
+coverage.html
+coverage.txt
+
+# Go workspace
+go.work
+go.work.sum
+
+# ==========================================
+# Entorno
+# ==========================================
+
+.env
+.env.prod
+.env.local
+.env.*.local
+
+# ==========================================
+# Docker volumes (datos locales)
+# ==========================================
+
+# Datos de PostgreSQL
+postgres/
+
+# Datos de pgAdmin
+pgadmin/
+
+# ==========================================
+# Editores e IDEs
+# ==========================================
+
+# VSCode
+.vscode/*
+!.vscode/launch.json
+
+# JetBrains (GoLand, etc.)
+.idea/
+
+# Vim
+*.swp
+*.swo
+
+# ==========================================
+# Sistema operativo
+# ==========================================
+
+# macOS
+.DS_Store
+
+# Linux
+*~
+
+# Windows
+Thumbs.db

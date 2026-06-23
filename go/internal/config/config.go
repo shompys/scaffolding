@@ -40,7 +40,7 @@ func Load() error {
 	DBPort = getEnv("DB_PORT", "5432")
 	DBUser = getEnv("DB_USER", "postgres")
 	DBPassword = getEnv("DB_PASSWORD", "")
-	DBName = getEnv("DB_NAME", "idea")
+	DBName = getEnv("DB_NAME", "db_name")
 	DBSSLMode = getEnv("DB_SSLMODE", "disable")
 	ServerPort = getEnv("PORT", "8080")
 	APPEnv = getEnv("APP_ENV", "development")
